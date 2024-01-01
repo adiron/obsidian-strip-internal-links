@@ -39,8 +39,8 @@ export default class StripLinks extends Plugin {
 		// [[link|text]] -> text
 		// [[text]] -> text
 		return s
-			.replace(/\[\[(.*?)\|(.*?)\]\]/g, '$2') // [[link|text]] -> text
-			.replace(/\[\[(.*?)\]\]/g, '$1') // [[text]] -> text
+			.replace(/\[\[([^[\]]*?)\|([^[\]]*?)\]\]/g, '$2') // [[link|text]] -> text
+			.replace(/\[\[([^[\]]*?)\]\]/g, '$1') // [[text]] -> text
 			.replace(/\[(.*?)\]\((.*?)\)/g, (match, text, link) => {
 				// [text](internal%20link) -> text (unless the link is to an external URI of some sort)
 				// External is anything matching "text:"
