@@ -1,7 +1,7 @@
 {
 	"id": "copy-without-links",
 	"name": "Strip Internal Links",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "0.15.0",
 	"description": "Copies the contents of files or selections within to the clipboard, without internal links.",
 	"author": "Adi Ron",
