@@ -4,7 +4,7 @@ export default class StripLinks extends Plugin {
 	async onload() {
 		this.addCommand({
 			id: 'strip-links-from-selection',
-			name: 'Selection',
+			name: 'Selection (to clipboard)',
 			editorCheckCallback: (checking: boolean, editor: Editor, view: MarkdownView) => {
 				if (checking) {
 					return editor.getSelection().length > 0;
@@ -24,12 +24,39 @@ export default class StripLinks extends Plugin {
 
 		this.addCommand({
 			id: 'strip-links-entire-file',
-			name: 'Entire file',
+			name: 'Entire file (to clipboard)',
 			editorCallback: (editor: Editor, view: MarkdownView) => {
 				const text = editor.getValue();
 				const strippedText = this.stripText(text);
 				navigator.clipboard.writeText(strippedText);
 				new Notice("File copied with internal links stripped");
+			}
+		});
+
+		this.addCommand({
+			id: 'strip-links-from-selection-in-place',
+			name: 'Selection (in place)',
+			editorCheckCallback: (checking: boolean, editor: Editor, view: MarkdownView) => {
+				if (checking) {
+					return editor.getSelection().length > 0;
+				}
+				const text = editor.getSelection();
+				if (text.length === 0) {
+					new Notice("Cannot strip internal links from selection: selection empty")
+					return;
+				}
+				const strippedText = this.stripText(text);
+				editor.replaceSelection(strippedText);
+			}
+		});
+
+		this.addCommand({
+			id: 'strip-links-entire-file-in-place',
+			name: 'Entire file (in place)',
+			editorCallback: (editor: Editor, view: MarkdownView) => {
+				const text = editor.getValue();
+				const strippedText = this.stripText(text);
+				editor.setValue(strippedText);
 			}
 		});
 	}
