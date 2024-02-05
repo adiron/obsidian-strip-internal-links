@@ -1,9 +1,9 @@
 {
 	"id": "copy-without-links",
 	"name": "Strip Internal Links",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"minAppVersion": "0.15.0",
-	"description": "Copies the contents of files or selections within to the clipboard, without internal links.",
+	"description": "Strips the selection or current file of internal links and either copies to the clipboard, or in-place",
 	"author": "Adi Ron",
 	"authorUrl": "https://adiron.me",
 	"isDesktopOnly": false

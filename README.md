@@ -12,10 +12,9 @@ plugin takes care of that.
 
 ## How do I use this?
 
-Either:
-1. In an editor, open the command palette and find the `Strip Internal Links: Entire file`
-2. In an editor with text selected, open the command palette and find the `Strip Internal Links: Selection`
-
-The result will be sent to your clipboard.
+In an editor, open the command palette and find the `Strip Internal Links:
+Entire file`, or `Strip Internal Links: Selection`. Each of these has two
+versions, *in-place* which will swap the content selected (or the entire file),
+or *to clipboard* which will copy the result into the clipboard.
 
 External links are preserved.

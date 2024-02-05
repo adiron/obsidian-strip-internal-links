@@ -1,7 +1,7 @@
 {
 	"name": "obsidian-strip-internal-links",
-	"version": "1.0.0",
-	"description": "A plugin for Obsidian that strips internal links from files and copies them to the clipboard.",
+	"version": "1.1.0",
+	"description": "A plugin for Obsidian that strips internal links from files.",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
